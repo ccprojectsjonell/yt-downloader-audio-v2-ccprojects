@@ -16,7 +16,7 @@ app.get("/api/dl", async (req, res) => {
   }
 
   try {
-    const cookies = fs.readFileSync("cookies.txt", "utf8");
+    const cookies = fs.readFileSync("./cookies/cookies.txt", "utf8");
     const response = await axios.get(videoUrl, {
       headers: { 
         Cookie: cookies,
