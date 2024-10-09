@@ -18,7 +18,10 @@ app.get("/api/dl", async (req, res) => {
   try {
     const cookies = fs.readFileSync("cookies.txt", "utf8");
     const response = await axios.get(videoUrl, {
-      headers: { Cookie: cookies },
+      headers: { 
+        Cookie: cookies,
+        'User-Agent': 'Mozilla/5.0' 
+      },
     });
 
     const $ = cheerio.load(response.data);
@@ -36,7 +39,7 @@ app.get("/api/dl", async (req, res) => {
             success: true,
             title,
             data: {
-              downloadLink: downloadResponse.data, // Assuming API gives a download link
+              downloadLink: downloadResponse.data, 
             },
           });
         } else {
@@ -45,11 +48,10 @@ app.get("/api/dl", async (req, res) => {
       })
       .catch((error) => res.status(500).json({ error: error.message }));
   } catch (error) {
-    res.status(500).json({ error: "Failed to fetch video title" });
+    res.status(500).json({ error: error.message });
   }
 });
 
 app.listen(3000, () => {
   console.log("Server running on port 3000");
 });
-//Jonell Magallanes Hahhaa
