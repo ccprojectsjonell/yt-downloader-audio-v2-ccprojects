@@ -1,0 +1,21 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^18.0.6",
+    "axios": "^1.7.7",
+    "cheerio": "^1.0.0",
+    "cobalt-api": "^1.0.0",
+    "express": "^4.21.1",
+    "rahad-media-downloader": "^2.1.14",
+    "ruhend-scraper": "^8.0.1"
+  }
+}
